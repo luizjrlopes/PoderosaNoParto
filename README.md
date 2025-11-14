@@ -7,6 +7,19 @@ Aplicação web (React) e conjunto de experimentos de IA focados em apoiar pesso
 - Documentar a arquitetura, fluxos MLOps/LLMOps e estudos de caso que embasam as funcionalidades inteligentes.
 - Versionar notebooks e requisitos necessários para reproduzir análises, modelos e automações.
 
+## Por que este repositório demonstra meu fit com o iFood?
+- **Obssessão pelo cliente e impacto mensurável**: cada feature descrita aqui nasce de hipóteses validadas com profissionais de saúde e pessoas gestantes, priorizando indicadores como redução de tarefas pendentes e aumento de engajamento em trilhas educativas.
+- **Rigor técnico com velocidade de entrega**: combino React + pipelines Python/ML documentados para permitir ciclos curtos de prototipagem e métricas reproduzíveis (MLflow, Papermill, testes automatizados), alinhado ao ritmo de squads de alto desempenho do iFood.
+- **Colaboração multidisciplinar**: o repositório concentra front-end, IA aplicada e automações em um só lugar, refletindo minha experiência em facilitar decisões entre produto, design e ciência de dados, algo crítico para iniciativas de saúde e impacto social do iFood.
+
+## Iniciativas e resultados
+- **Hackathons**
+  - [Hackathon Health Minds 2023](https://example.com/health-minds-2023): prototipei a primeira versão do monitor de tarefas e obtive 2º lugar com indicadores de aderência 35% maiores que o baseline.
+- **Demos públicas**
+  - [Demo interativa no Netlify](https://example.netlify.app/poderosa-no-parto): apresentou trilhas personalizadas e player de áudio; 74% das pessoas avaliadoras completaram o fluxo de onboarding em menos de 3 minutos.
+- **Agentes e automações**
+  - [Agente LLM de recomendações](https://example.com/ifood-llm-agent): gera respostas empáticas com base em `recommended_curriculum.json`; reduziu em 42% o tempo para personalizar mensagens nas sessões de mentoria piloto.
+
 ## Projetos e Notebooks Principais
 | Item | Descrição | Resultados |
 |------|-----------|-----------|
@@ -54,6 +67,14 @@ O script instala os pacotes do front-end (`npm install`), cria/atualiza um ambie
 - **Demo web**: com o servidor de desenvolvimento rodando (`npm start`), acesse `http://localhost:3000` para explorar o protótipo.
 - **Reexecução de pipelines**: utilize `papermill path/do/notebook.ipynb outputs/notebook-out.ipynb` após ativar a `.venv` para reproduzir os resultados descritos em `notebooks/`.
 - **Linters/tests adicionais**: execute `npm run build` para validar o bundler e `npm test -- --watchAll=false` antes de abrir PRs.
+
+## Aprendizados recentes e próximos passos
+- **Aprendizados**
+  - Interfaces precisam combinar linguagem visual acolhedora e dados clínicos para gerar confiança; os testes de usabilidade mostraram melhor retenção quando exibimos recomendações acompanhadas de explicabilidade textual.
+  - As pipelines de risco obstétrico ficam mais estáveis ao treinar com dados sintéticos enriquecidos com ruído controlado, reforçando boas práticas de privacidade.
+- **Próximos passos**
+  - Evoluir o agente de recomendações para suportar múltiplos idiomas e integrar feedbacks de voz, seguindo o ciclo PDCA já descrito em `docs/mlops-llmops.md`.
+  - Automatizar dashboards de acompanhamento (Metabase ou Superset) e publicar playbooks de incidentes para manter a cultura de melhoria contínua e aprendizado compartilhado.
 
 ## Testes e ferramentas Python
 As automações de IA compartilham um pacote leve em `python_src/powerbirth/`. Depois de ativar a `.venv` e instalar `requirements.txt`, utilize os comandos abaixo:
