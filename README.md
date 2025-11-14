@@ -17,22 +17,43 @@ Aplicação web (React) e conjunto de experimentos de IA focados em apoiar pesso
 
 Consulte `docs/case-studies.md` para detalhes de datasets, métricas e insights.
 
-## Setup e Execução do Front-end
+## Setup do Projeto
 ### Pré-requisitos
 - Node.js 18+ e npm 9+
+- Python 3.10+
 - Variáveis de ambiente (crie `.env` na raiz se precisar customizar `REACT_APP_API_BASE_URL`).
 
-### Passos
-1. Instale as dependências: `npm install`
-2. (Opcional) Configure o endpoint das APIs no arquivo `.env`.
-3. Inicie em modo desenvolvimento: `npm start`
-4. Execute testes automatizados: `npm test`
-5. Gere o build estático para deploy: `npm run build`
+### Setup automatizado
+Execute o script `scripts/setup.sh` para instalar tudo de uma vez:
 
-## Ambiente de Notebooks
-- Cada pasta dentro de `notebooks/` contém um `README.md` e um `requirements.txt` específicos.
-- Utilize Python 3.10+ e crie ambientes virtuais independentes (`python -m venv .venv`).
+```bash
+chmod +x scripts/setup.sh   # necessário apenas na primeira vez
+./scripts/setup.sh
+```
+
+O script instala os pacotes do front-end (`npm install`), cria/atualiza um ambiente virtual em `.venv` e roda `pip install -r requirements.txt` com as dependências compartilhadas usadas nos notebooks e automações Python. Reative o ambiente quando necessário com `source .venv/bin/activate`.
+
+### Setup manual (alternativo)
+1. Instale dependências do front-end: `npm install`
+2. Crie o ambiente Python: `python -m venv .venv && source .venv/bin/activate`
+3. Instale os pacotes científicos usados pelos notebooks: `pip install -r requirements.txt`
+4. (Opcional) Configure o endpoint das APIs no arquivo `.env`
+
+## Execução do Front-end e Notebooks
+### Front-end React
+1. Inicie em modo desenvolvimento: `npm start`
+2. Gere o build estático para deploy: `npm run build`
+3. Rode os testes automatizados: `npm test -- --watchAll=false`
+
+### Ambiente de Notebooks
+- O ambiente virtual criado durante o setup já possui as dependências compartilhadas listadas em `requirements.txt` (pandas, scikit-learn, Jupyter Lab, Papermill, etc.).
+- Cada pasta dentro de `notebooks/` mantém instruções adicionais e, se necessário, um `requirements.txt` específico que pode ser instalado por cima do ambiente base.
 - Rode os notebooks manualmente (Jupyter Lab) ou via Papermill/GitHub Actions seguindo `docs/mlops-llmops.md`.
+
+### Demos e checagens rápidas
+- **Demo web**: com o servidor de desenvolvimento rodando (`npm start`), acesse `http://localhost:3000` para explorar o protótipo.
+- **Reexecução de pipelines**: utilize `papermill path/do/notebook.ipynb outputs/notebook-out.ipynb` após ativar a `.venv` para reproduzir os resultados descritos em `notebooks/`.
+- **Linters/tests adicionais**: execute `npm run build` para validar o bundler e `npm test -- --watchAll=false` antes de abrir PRs.
 
 ## Documentação Relacionada
 - `docs/project-overview.md`: contexto histórico e objetivos.
