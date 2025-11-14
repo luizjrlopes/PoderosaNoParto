@@ -16,6 +16,8 @@ Garantir que os modelos de risco obstétrico, recomendação de conteúdo e assi
 | Validação | pytest + great_expectations | Testes automatizados de funções de pré-processamento e checagens de dados. |
 | Aprovação | Model Registry | Modelos com métrica superior ao baseline e validação manual recebem tag `Production`. |
 
+Para smoke tests rápidos, execute `python scripts/run_synthetic_inference.py` – o script gera dados sintéticos, treina o pipeline logístico definido em `python_src/powerbirth/` e mede AUC com `pytest`/`ruff` garantindo que as funções centrais permaneçam estáveis.
+
 ## Deploy e Monitoramento
 - **Serviço de inferência**: endpoints FastAPI empacotados em Docker; imagens publicadas no GHCR.
 - **Rollouts**: GitHub Actions publica a imagem e atualiza o cluster Kubernetes (ou ECS) com estratégia canário (10% -> 50% -> 100%).

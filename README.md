@@ -55,6 +55,25 @@ O script instala os pacotes do front-end (`npm install`), cria/atualiza um ambie
 - **Reexecução de pipelines**: utilize `papermill path/do/notebook.ipynb outputs/notebook-out.ipynb` após ativar a `.venv` para reproduzir os resultados descritos em `notebooks/`.
 - **Linters/tests adicionais**: execute `npm run build` para validar o bundler e `npm test -- --watchAll=false` antes de abrir PRs.
 
+## Testes e ferramentas Python
+As automações de IA compartilham um pacote leve em `python_src/powerbirth/`. Depois de ativar a `.venv` e instalar `requirements.txt`, utilize os comandos abaixo:
+
+```bash
+# suíte de testes
+pytest
+
+# lint
+ruff check python_src tests scripts
+
+# formatação
+black python_src tests scripts
+
+# demo ponta a ponta com dados sintéticos
+python scripts/run_synthetic_inference.py --num-training-samples 400 --num-inference-samples 20
+```
+
+O script `scripts/run_synthetic_inference.py` treina o modelo logístico sintético, produz inferências para novos registros e salva um relatório em `models/synthetic_inference_results.json`.
+
 ## Documentação Relacionada
 - `docs/project-overview.md`: contexto histórico e objetivos.
 - `docs/architecture.md`: visão detalhada de componentes e fluxos de dados.
