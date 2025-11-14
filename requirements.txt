@@ -14,3 +14,6 @@ shap==0.43.0
 prophet==1.1.4
 plotly==5.18.0
 evidently==0.4.2
+pytest==7.4.3
+black==23.11.0
+ruff==0.1.6

@@ -11,6 +11,13 @@
 # production
 /build
 
+# python
+.venv
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+models/synthetic_inference_results.json
+
 # misc
 .DS_Store
 .env.local
