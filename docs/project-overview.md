@@ -9,6 +9,8 @@ Trata-se de uma produção tecnológica do tipo prototipagem que visa à constru
 ## Resultados
 O conteúdo pedagógico do aplicativo baseou-se no curso “Preparo para o Parto e Aleitamento”. O protótipo apresenta instrumentos para lembrar a gestante diariamente das técnicas orientadas pela(o) enfermeira(o), assim como recursos para facilitar a realização correta das técnicas, conscientização sobre o trabalho de parto e controle do desempenho em relação às atividades propostas para o aprendizado. O aplicativo recebeu o nome “Poderosa no Parto”, e pode ser vizualizado através do endereço (https://poderosanoparto-frontend.herokuapp.com/), seus recursos são: perfil da usuária, agenda de tarefas com foco em treinamento da respiração superficial e profunda, relaxamento muscular progressivo e gráficos sobre o progresso nas atividades, incluindo um manual sobre práticas saudáveis para o parto, baseado em evidências científicas.
 
+> **Visual do protótipo**: para manter o repositório leve, as capturas de tela não são mais versionadas. Execute `npm start` e acesse `http://localhost:3000` para visualizar o dashboard inicial com os cards de trilhas educacionais, CTA para agendar teleorientação e o gráfico de progresso semanal, reproduzindo a interface utilizada nas entrevistas de usabilidade.
+
 ## Conclusão
 
 O uso de aplicativos em saúde é uma ferramenta tecnológica com potencial para melhorar o acompanhamento da pessoa gestante durante o pré-natal. O desenvolvimento do protótipo por uma equipe composta por profissionais de saúde e TI é um diferencial positivo desta experiência. No momento deste estudo, está sendo analisada a forma de adaptação da versão Web para a versão Mobile.
